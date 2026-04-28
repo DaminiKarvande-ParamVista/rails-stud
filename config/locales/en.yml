@@ -1,0 +1,93 @@
+# Files in the config/locales directory are used for internationalization and
+# are automatically loaded by Rails. If you want to use locales other than
+# English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more about the API, please read the Rails Internationalization guide
+# at https://guides.rubyonrails.org/i18n.html.
+#
+# Be aware that YAML interprets the following case-insensitive strings as
+# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
+# must be quoted to be interpreted as strings. For example:
+#
+#     en:
+#       "yes": yup
+#       enabled: "ON"
+
+# en:
+#   hello: "Hello world"
+
+en:
+  app_name: "Student Management System"
+
+  nav:
+    students: "Students"
+    courses: "Courses"
+    departments: "Departments"
+    managers: "Managers"
+    logout: "Logout"
+    language: "Language"
+
+  students:
+    title: "Listing Students"
+    new: "New Student"
+    edit: "Edit Student"
+    show: "Student Details"
+    search: "Live search..."
+    first_name: "First Name"
+    last_name: "Last Name"
+    email: "Email"
+    contact: "Contact"
+    alt_contact: "Alt Contact"
+    dob: "Date of Birth"
+    local_address: "Local Address"
+    permanent_address: "Permanent Address"
+    actions: "Actions"
+    view: "View"
+    edit_link: "Edit"
+    delete: "Delete"
+    confirm_delete: "Are you sure?"
+
+  courses:
+    title: "Listing Courses"
+    new: "New Course"
+    name: "Name"
+    description: "Description"
+
+  departments:
+    title: "Listing Departments"
+    new: "New Department"
+    name: "Name"
+
+  buttons:
+    save: "Save"
+    cancel: "Cancel"
+    submit: "Submit"
+    search: "Search"
+
+  flash:
+    created: "%{model} was successfully created."
+    updated: "%{model} was successfully updated."
+    deleted: "%{model} was successfully deleted."
+    not_authorized: "You are not authorized to perform this action."
+
+  devise:
+    login: "Login"
+    logout: "Logout"
+    email: "Email"
+    password: "Password"
+    sign_in: "Sign In"
+    remember_me: "Remember me"

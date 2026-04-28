@@ -1,0 +1,1 @@
+ENV["PATH"] = "C:/vips-dev-8.18/bin;" + ENV["PATH"]

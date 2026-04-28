@@ -1,0 +1,61 @@
+mr:
+  app_name: "विद्यार्थी व्यवस्थापन प्रणाली"
+
+  nav:
+    students: "विद्यार्थी"
+    courses: "अभ्यासक्रम"
+    departments: "विभाग"
+    managers: "व्यवस्थापक"
+    logout: "लॉग आउट"
+    language: "भाषा"
+
+  students:
+    title: "विद्यार्थ्यांची यादी"
+    new: "नवीन विद्यार्थी"
+    edit: "विद्यार्थी संपादित करा"
+    show: "विद्यार्थी तपशील"
+    search: "शोधा..."
+    first_name: "पहिले नाव"
+    last_name: "आडनाव"
+    email: "ईमेल"
+    contact: "संपर्क"
+    alt_contact: "पर्यायी संपर्क"
+    dob: "जन्मतारीख"
+    local_address: "स्थानिक पत्ता"
+    permanent_address: "कायमचा पत्ता"
+    actions: "क्रिया"
+    view: "पहा"
+    edit_link: "संपादित करा"
+    delete: "हटवा"
+    confirm_delete: "तुम्हाला खात्री आहे का?"
+
+  courses:
+    title: "अभ्यासक्रमांची यादी"
+    new: "नवीन अभ्यासक्रम"
+    name: "नाव"
+    description: "वर्णन"
+
+  departments:
+    title: "विभागांची यादी"
+    new: "नवीन विभाग"
+    name: "नाव"
+
+  buttons:
+    save: "जतन करा"
+    cancel: "रद्द करा"
+    submit: "सबमिट करा"
+    search: "शोधा"
+
+  flash:
+    created: "%{model} यशस्वीरित्या तयार केले."
+    updated: "%{model} यशस्वीरित्या अपडेट केले."
+    deleted: "%{model} यशस्वीरित्या हटवले."
+    not_authorized: "ही क्रिया करण्यास तुम्हाला परवानगी नाही."
+
+  devise:
+    login: "लॉगिन"
+    logout: "लॉग आउट"
+    email: "ईमेल"
+    password: "पासवर्ड"
+    sign_in: "साइन इन करा"
+    remember_me: "मला लक्षात ठेवा"

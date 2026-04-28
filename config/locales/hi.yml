@@ -1,0 +1,61 @@
+hi:
+  app_name: "छात्र प्रबंधन प्रणाली"
+
+  nav:
+    students: "छात्र"
+    courses: "पाठ्यक्रम"
+    departments: "विभाग"
+    managers: "प्रबंधक"
+    logout: "लॉग आउट"
+    language: "भाषा"
+
+  students:
+    title: "छात्रों की सूची"
+    new: "नया छात्र"
+    edit: "छात्र संपादित करें"
+    show: "छात्र विवरण"
+    search: "खोजें..."
+    first_name: "पहला नाम"
+    last_name: "अंतिम नाम"
+    email: "ईमेल"
+    contact: "संपर्क"
+    alt_contact: "वैकल्पिक संपर्क"
+    dob: "जन्म तिथि"
+    local_address: "स्थानीय पता"
+    permanent_address: "स्थायी पता"
+    actions: "कार्रवाई"
+    view: "देखें"
+    edit_link: "संपादित करें"
+    delete: "हटाएं"
+    confirm_delete: "क्या आप निश्चित हैं?"
+
+  courses:
+    title: "पाठ्यक्रमों की सूची"
+    new: "नया पाठ्यक्रम"
+    name: "नाम"
+    description: "विवरण"
+
+  departments:
+    title: "विभागों की सूची"
+    new: "नया विभाग"
+    name: "नाम"
+
+  buttons:
+    save: "सहेजें"
+    cancel: "रद्द करें"
+    submit: "जमा करें"
+    search: "खोजें"
+
+  flash:
+    created: "%{model} सफलतापूर्वक बनाया गया।"
+    updated: "%{model} सफलतापूर्वक अपडेट किया गया।"
+    deleted: "%{model} सफलतापूर्वक हटाया गया।"
+    not_authorized: "आप यह कार्रवाई करने के लिए अधिकृत नहीं हैं।"
+
+  devise:
+    login: "लॉगिन"
+    logout: "लॉग आउट"
+    email: "ईमेल"
+    password: "पासवर्ड"
+    sign_in: "साइन इन करें"
+    remember_me: "मुझे याद रखें"

@@ -1,0 +1,84 @@
+@import "bootstrap/scss/bootstrap";
+
+// Global styles
+body {
+  background: linear-gradient(to right, #eef2f3, #ffffff);
+  font-family: "Segoe UI", sans-serif;
+}
+
+// Container styling
+.main-container {
+  margin-top: 50px;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+// Heading style
+h1 {
+  color: #2c3e50;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+// Card style (for student details)
+.student-card {
+  padding: 20px;
+  border-radius: 10px;
+  background: #f8f9fa;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.student-card:hover {
+  transform: translateY(-5px);
+  background: #ffffff;
+}
+
+// Buttons
+.btn-custom {
+  background: #4caf50;
+  color: white;
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+.btn-custom:hover {
+  background: #45a049;
+}
+
+// Labels
+.label {
+  font-weight: 500;
+  color: #555;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+}
+
+.footer h5 {
+  font-weight: 600;
+}
+
+.footer p {
+  font-size: 14px;
+}
+.pagy a, .pagy span {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 0 2px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  color: #0d6efd;
+  text-decoration: none;
+}
+.pagy .current {
+  background-color: #0d6efd;
+  color: white;
+  border-color: #0d6efd;
+}

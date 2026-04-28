@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.2.0",
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^8.0.23",
+    "@rails/actiontext": "^8.1.300",
+    "bootstrap": "^4.6.2",
+    "jquery": "^3.7.1",
+    "popper.js": "^1.16.1",
+    "sass": "^1.99.0",
+    "trix": "^2.1.18"
+  },
+  "devDependencies": {
+    "vite": "^8.0.0",
+    "vite-plugin-ruby": "^5.2.1"
+  }
+}

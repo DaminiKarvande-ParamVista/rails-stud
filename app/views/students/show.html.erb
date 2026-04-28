@@ -1,0 +1,64 @@
+<div class="container mt-5">
+  <div class="card rounded-0 shadow-lg">
+    
+    <div class="card-header bg-primary text-white">
+      <h3 class="mb-0">Student Details</h3>
+    </div>
+
+    <div class="card-body">
+
+      <div class="row mb-2">
+        <div class="col-md-4 fw-bold">First Name:</div>
+        <div class="col-md-8"><%= @student.first_name %></div>
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-md-4 fw-bold">Last Name:</div>
+        <div class="col-md-8"><%= @student.last_name %></div>
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-md-4 fw-bold">Full Name:</div>
+        <div class="col-md-8"><%= @student.full_name %></div>
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-md-4 fw-bold">Email Address:</div>
+        <div class="col-md-8 text-success"><%= @student.email_address %></div>
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-md-4 fw-bold">Permanent Contact:</div>
+        <div class="col-md-8"><%= @student.permanent_contact %></div>
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-md-4 fw-bold">Alternative Contact:</div>
+        <div class="col-md-8"><%= @student.alternative_contact %></div>
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-md-4 fw-bold">Date of Birth:</div>
+        <div class="col-md-8"><%= formatted_date(@student.date_of_birth) %></div>
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-md-4 fw-bold">Local Address:</div>
+        <div class="col-md-8"><%= @student.local_address %></div>
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-md-4 fw-bold">Permanent Address:</div>
+        <div class="col-md-8"><%= @student.permanent_address %></div>
+      </div>
+
+    </div>
+
+    <div class="card-footer text-end">
+      <%= link_to 'Back', students_path, class: "btn btn-secondary me-2" %>
+      <%= link_to 'Edit', edit_student_path(@student), class: "btn btn-warning me-2" %>
+      <button class="btn btn-success">Test Button</button>
+    </div>
+
+  </div>
+</div>

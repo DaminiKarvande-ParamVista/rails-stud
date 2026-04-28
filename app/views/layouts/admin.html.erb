@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Student Management Admin - Dashboard</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= vite_client_tag %>
+    <%= vite_javascript_tag 'admin' %>
+    <!--
+      If using a TypeScript entrypoint file:
+        vite_typescript_tag 'admin'
+
+      If using a .jsx or .tsx entrypoint, add the extension:
+        vite_javascript_tag 'admin.jsx'
+
+      Visit the guide for more information: https://vite-ruby.netlify.app/guide/rails
+    -->
+
+  </head>
+
+  <body id="page-top">
+    <div id="wrapper">  
+    <%= render partial:'shared/admin-sidebar' %>
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <%= render partial:'shared/admin_header' %>
+                    <div class="container-fluid">
+                        <%= yield %>
+                    </div>
+                <%= render 'shared/admin_logout_modal' %>
+                <%= render 'shared/admin_footer' %>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
