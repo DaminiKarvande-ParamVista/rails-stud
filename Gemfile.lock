@@ -116,6 +116,9 @@ GEM
       responders
       warden (~> 1.2.3)
     dotenv (3.2.0)
+    dotenv-rails (3.2.0)
+      dotenv (= 3.2.0)
+      railties (>= 6.1)
     drb (2.2.3)
     dry-cli (1.4.1)
     ed25519 (1.4.0)
@@ -227,6 +230,8 @@ GEM
     parser (3.3.11.1)
       ast (~> 2.4.1)
       racc
+    pg (1.6.3-x64-mingw-ucrt)
+    pg (1.6.3-x86_64-linux)
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
@@ -422,6 +427,7 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 5.0)
+  dotenv-rails
   fiddle
   image_processing (~> 1.2)
   importmap-rails
@@ -430,6 +436,7 @@ DEPENDENCIES
   kaminari
   letter_opener
   pagy (~> 8.4)
+  pg
   propshaft
   puma (>= 5.0)
   pundit (~> 2.5)
@@ -481,6 +488,7 @@ CHECKSUMS
   debug (1.11.1) sha256=2e0b0ac6119f2207a6f8ac7d4a73ca8eb4e440f64da0a3136c30343146e952b6
   devise (5.0.3) sha256=c4c065051cdc4ace11547b2b7f5c3c4c97d0f1269250f5fe90f614ff78f29546
   dotenv (3.2.0) sha256=e375b83121ea7ca4ce20f214740076129ab8514cd81378161f11c03853fe619d
+  dotenv-rails (3.2.0) sha256=657e25554ba622ffc95d8c4f1670286510f47f2edda9f68293c3f661b303beab
   drb (2.2.3) sha256=0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373
   dry-cli (1.4.1) sha256=b8015bb76c708aa8705a36faf694973e75eeeffca39b89c8e172dc6f66a7d874
   ed25519 (1.4.0) sha256=16e97f5198689a154247169f3453ef4cfd3f7a47481fde0ae33206cdfdcac506
@@ -533,6 +541,8 @@ CHECKSUMS
   pagy (8.6.3) sha256=537b2ee3119f237dd6c4a0d0a35c67a77b9d91ebb9d4f85e31407c2686774fb2
   parallel (2.0.1) sha256=337782d3e39f4121e67563bf91dd8ece67f48923d90698614773a0ec9a5b2c7d
   parser (3.3.11.1) sha256=d17ace7aabe3e72c3cc94043714be27cc6f852f104d81aa284c2281aecc65d54
+  pg (1.6.3-x64-mingw-ucrt) sha256=cdff974cbde6935e07b8f5cc3c2af7d320bc5263bde06acaae08302194ebf5e1
+  pg (1.6.3-x86_64-linux) sha256=5d9e188c8f7a0295d162b7b88a768d8452a899977d44f3274d1946d67920ae8d
   pp (0.6.3) sha256=2951d514450b93ccfeb1df7d021cae0da16e0a7f95ee1e2273719669d0ab9df6
   prettyprint (0.2.0) sha256=2bc9e15581a94742064a3cc8b0fb9d45aae3d03a1baa6ef80922627a0766f193
   prism (1.9.0) sha256=7b530c6a9f92c24300014919c9dcbc055bf4cdf51ec30aed099b06cd6674ef85

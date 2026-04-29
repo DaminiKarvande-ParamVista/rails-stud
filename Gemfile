@@ -79,3 +79,5 @@ gem 'pagy', '~> 8.4'
 gem 'ransack'
 gem "devise", "~> 5.0"
 gem "pundit", "~> 2.5"
+gem "pg"
+gem 'dotenv-rails'
