@@ -1,1 +1,24 @@
-d
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: damini
+      POSTGRES_DB: student_management_production
+    ports:
+      - "5433:5432"
+
+  web:
+    build: .
+    container_name: student_app
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    restart: always
