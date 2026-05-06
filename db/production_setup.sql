@@ -1,0 +1,3 @@
+CREATE DATABASE student_management_production_cache;
+CREATE DATABASE student_management_production_queue;
+CREATE DATABASE student_management_production_cable;

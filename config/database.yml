@@ -43,7 +43,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   username: 'postgres'
-  password: <%= ENV["DATABASE_PASSWORD"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
   host: 'localhost'
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
@@ -55,13 +55,38 @@ test:
   <<: *default
   database: student_management_test
 
+staging:
+  primary: &primary
+    adapter: postgresql
+    encoding: unicode
+    database: <%= ENV['DB_NAME'] %>
+    username: <%= ENV['DB_USER'] %>
+    password: <%= ENV['DB_PASSWORD'] %>
+    host: <%= ENV['DB_HOST'] %>
+    port: 5432
+
+  cache:
+    <<: *primary
+    database: student_management_staging
+    migrations_paths: db/cache_migrate
+
+  queue:
+    <<: *primary
+    database: student_management_staging
+    migrations_paths: db/queue_migrate
+
+  cable:
+    <<: *primary
+    database: student_management_staging
+    migrations_paths: db/cable_migrate
+
 production:
   primary: &primary
     adapter: postgresql
     encoding: unicode
-    database: <%= ENV['POSTGRES_DB'] %>
-    username: <%= ENV['POSTGRES_USER'] %>
-    password: <%= ENV['POSTGRES_PASSWORD'] %>
+    database: <%= ENV['DB_NAME'] %>
+    username: <%= ENV['DB_USER'] %>
+    password: <%= ENV['DB_PASSWORD'] %>
     host: <%= ENV['DB_HOST'] %>
     port: 5432
 

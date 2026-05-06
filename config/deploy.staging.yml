@@ -1,0 +1,73 @@
+
+# ---------------------------------------------------------------------
+# config/deploy.yml
+# ---------------------------------------------------------------------
+service: student-management-staging
+image: daminikarvande/student_management
+
+# ==== Servers ====
+servers:
+  web:
+    hosts:
+      - 66.116.234.181
+    labels:
+      # Accept requests from ANY host (since no domain)
+      traefik.http.routers.student-management.rule: HostRegexp(`{host:.+}`)
+
+# ==== Proxy (NO SSL because no domain) ====
+proxy:
+  ssl: false
+  host: 66.116.234.181
+
+# ==== Docker Hub Registry ====
+registry:
+  username: daminikarvande
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+# ==== Builder ====
+builder:
+  arch: amd64
+
+# ==== SSH ====
+ssh:
+  user: deploy
+  keys: 
+    - ~/.ssh/id_ed25519
+
+# ==== Environment Variables ====
+env:
+  secret:
+    - RAILS_MASTER_KEY
+    - POSTGRES_PASSWORD
+    - DB_PASSWORD
+  clear:
+    RAILS_ENV: staging
+    RAILS_LOG_TO_STDOUT: true
+    RAILS_SERVE_STATIC_FILES: true
+    SOLID_QUEUE_IN_PUMA: true
+    DB_HOST: student-management-postgres
+    DB_NAME: student_management_staging
+    DB_USER: postgres
+    
+
+# ==== PostgreSQL Accessory ====
+accessories:
+  postgres:
+    image: postgres:16-alpine
+    host: 66.116.234.181
+    env:
+      clear:
+        POSTGRES_USER: postgres
+        POSTGRES_DB: student_management_staging
+      secret:
+        - POSTGRES_PASSWORD
+    directories:
+      - data:/var/lib/postgresql/data
+
+# ==== Useful Aliases ====
+aliases:
+  console: app exec --interactive --reuse "bin/rails console"
+  shell: app exec --interactive --reuse "bash"
+  logs: app logs -f
+  dbc: app exec --interactive --reuse "bin/rails dbconsole"
