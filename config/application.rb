@@ -17,6 +17,10 @@ module StudentManagement
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
 
+
+# Use :async for dev/test, or add sidekiq/good_job gem for production
+config.active_job.queue_adapter = :async
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -27,7 +31,7 @@ module StudentManagement
 
     # configuration for internationalization (i18n)
     config.i18n.default_locale = :en
-    config.i18n.available_locales = [:en, :hi, :mr]
+    config.i18n.available_locales = [ :en, :hi, :mr ]
     config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.yml")]
   end
 end
