@@ -5,10 +5,6 @@
 service: student-management-staging
 image: daminikarvande/student_management
 
-hooks:
-  pre-deploy:
-    - kamal app exec --reuse 'bin/rails db:migrate' -d staging
-
 # ==== Servers ====
 servers:
   web:
