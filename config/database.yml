@@ -70,10 +70,10 @@ staging:
     database: student_management_staging
     migrations_paths: db/cache_migrate
 
-  queue:
-    <<: *primary
-    database: student_management_staging
-    migrations_paths: db/queue_migrate
+  # queue:
+  #   <<: *primary
+  #   database: student_management_staging
+  #   migrations_paths: db/queue_migrate
 
   cable:
     <<: *primary
@@ -95,10 +95,10 @@ production:
     database: student_management_production
     migrations_paths: db/cache_migrate
 
-  queue:
-    <<: *primary
-    database: student_management_production
-    migrations_paths: db/queue_migrate
+  # queue:
+  #   <<: *primary
+  #   database: student_management_production
+  #   migrations_paths: db/queue_migrate
 
   cable:
     <<: *primary
