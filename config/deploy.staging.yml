@@ -18,6 +18,7 @@ servers:
 proxy:
   ssl: false
   host: 66.116.234.181
+  app_port: 3000
   healthcheck:
     path: /up
 
