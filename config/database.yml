@@ -30,10 +30,6 @@
 #     <<: *default
 #     database: storage/production_cache.sqlite3
 #     migrations_paths: db/cache_migrate
-#   queue:
-#     <<: *default
-#     database: storage/production_queue.sqlite3
-#     migrations_paths: db/queue_migrate
 #   cable:
 #     <<: *default
 #     database: storage/production_cable.sqlite3
@@ -70,11 +66,6 @@ staging:
     database: student_management_staging
     migrations_paths: db/cache_migrate
 
-  # queue:
-  #   <<: *primary
-  #   database: student_management_staging
-  #   migrations_paths: db/queue_migrate
-
   cable:
     <<: *primary
     database: student_management_staging
@@ -95,10 +86,6 @@ production:
     database: student_management_production
     migrations_paths: db/cache_migrate
 
-  # queue:
-  #   <<: *primary
-  #   database: student_management_production
-  #   migrations_paths: db/queue_migrate
 
   cable:
     <<: *primary
