@@ -42,6 +42,7 @@ ssh:
 env:
   secret:
     - RAILS_MASTER_KEY
+    - SECRET_KEY_BASE
     - POSTGRES_PASSWORD
     - DB_PASSWORD
   clear:
