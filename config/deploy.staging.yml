@@ -10,17 +10,17 @@ servers:
   web:
     hosts:
       - 66.116.234.181
-    labels:
-      # Accept requests from ANY host (since no domain)
-      traefik.http.routers.student-management.rule: HostRegexp(`{host:.+}`)
+    # labels:
+    #   # Accept requests from ANY host (since no domain)
+    #   traefik.http.routers.student-management.rule: HostRegexp(`{host:.+}`)
 
 # ==== Proxy (NO SSL because no domain) ====
 proxy:
-  ssl: false
-  host: 66.116.234.181
+  # ssl: false
+  # host: 66.116.234.181
   app_port: 3000
-  healthcheck:
-    path: /up
+  # healthcheck:
+  #   path: /up
 
 # ==== Docker Hub Registry ====
 registry:
