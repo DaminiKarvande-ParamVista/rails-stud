@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get "/up", to: proc { [ 200, {}, [ "OK" ] ] }
   devise_for :admin_users, controllers: {
     sessions: "admin_users/sessions",
     registrations: "admin_users/registrations",
