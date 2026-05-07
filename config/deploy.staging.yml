@@ -18,7 +18,8 @@ servers:
 proxy:
   ssl: false
   host: 66.116.234.181
-  readiness_delay: 60
+  healthcheck:
+    path: /up
 
 # ==== Docker Hub Registry ====
 registry:

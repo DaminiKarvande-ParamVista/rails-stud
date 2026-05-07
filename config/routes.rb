@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, controllers:{
-    sessions: 'admin_users/sessions',
-    registrations: 'admin_users/registrations',
-    passwords: 'admin_users/passwords'
+  get "/up", to: proc { [ 200, {}, [ "OK" ] ] }
+  devise_for :admin_users, controllers: {
+    sessions: "admin_users/sessions",
+    registrations: "admin_users/registrations",
+    passwords: "admin_users/passwords"
   }
   resources :projects
   resources :courses
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  root 'welcome#index'
+  root "welcome#index"
 
   resources :students do
     member do
@@ -38,10 +39,10 @@ Rails.application.routes.draw do
 
   # scope module: :admin do
   #   resources :students
-  # end 
+  # end
 
   namespace :admin do
     resources :students
-    get 'dashboard' => 'dashboard#index'
+    get "dashboard" => "dashboard#index"
   end
 end
