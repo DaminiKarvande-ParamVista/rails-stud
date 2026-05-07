@@ -16,15 +16,15 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y \
     build-essential \
     git \
-    curl \  
+    curl \
     libvips \
     libyaml-dev \
     pkg-config \
     libffi-dev \
-    nodejs \
-    npm \
-    libjemalloc2 \
-    && rm -rf /var/lib/apt/lists /var/cache/apt/archives
+    libjemalloc2 && \
+    curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Set production environment variables and enable jemalloc for reduced memory usage and latency.
 ENV RAILS_ENV="production" \
