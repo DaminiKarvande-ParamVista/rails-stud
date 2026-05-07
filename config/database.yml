@@ -61,16 +61,6 @@ staging:
     host: <%= ENV['DB_HOST'] %>
     port: 5432
 
-  cache:
-    <<: *primary
-    database: student_management_staging
-    migrations_paths: db/cache_migrate
-
-  cable:
-    <<: *primary
-    database: student_management_staging
-    migrations_paths: db/cable_migrate
-
 production:
   primary: &primary
     adapter: postgresql
@@ -80,14 +70,3 @@ production:
     password: <%= ENV['DB_PASSWORD'] %>
     host: <%= ENV['DB_HOST'] %>
     port: 5432
-
-  cache:
-    <<: *primary
-    database: student_management_production
-    migrations_paths: db/cache_migrate
-
-
-  cable:
-    <<: *primary
-    database: student_management_production
-    migrations_paths: db/cable_migrate

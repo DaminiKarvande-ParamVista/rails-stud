@@ -341,15 +341,6 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 4.0)
       websocket (~> 1.0)
-    solid_cable (3.0.12)
-      actioncable (>= 7.2)
-      activejob (>= 7.2)
-      activerecord (>= 7.2)
-      railties (>= 7.2)
-    solid_cache (1.0.10)
-      activejob (>= 7.2)
-      activerecord (>= 7.2)
-      railties (>= 7.2)
     sqlite3 (2.9.2-x64-mingw-ucrt)
     sqlite3 (2.9.2-x86_64-linux-gnu)
     sshkit (1.25.0)
@@ -431,8 +422,6 @@ DEPENDENCIES
   ransack
   rubocop-rails-omakase
   selenium-webdriver
-  solid_cable
-  solid_cache
   sqlite3 (>= 2.1)
   stimulus-rails
   thruster
@@ -563,8 +552,6 @@ CHECKSUMS
   rubyzip (3.2.2) sha256=c0ed99385f0625415c8f05bcae33fe649ed2952894a95ff8b08f26ca57ea5b3c
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
   selenium-webdriver (4.43.0) sha256=a634377b964b701c6ac0a009ce3a08fa34ec1e1e7fe9a6d57e3088d14529a65c
-  solid_cable (3.0.12) sha256=a168a54731a455d5627af48d8441ea3b554b8c1f6e6cd6074109de493e6b0460
-  solid_cache (1.0.10) sha256=bc05a2fb3ac78a6f43cbb5946679cf9db67dd30d22939ededc385cb93e120d41
   sqlite3 (2.9.2-x64-mingw-ucrt) sha256=b1b10d8c45a495b1e5b6338f7baa11297522bb9809b01e7e575090edd685953e
   sqlite3 (2.9.2-x86_64-linux-gnu) sha256=dce83ffcb7e72f9f7aeb6e5404f15d277a45332fe18ccce8a8b3ed51e8d23aee
   sshkit (1.25.0) sha256=c8c6543cdb60f91f1d277306d585dd11b6a064cb44eab0972827e4311ff96744
