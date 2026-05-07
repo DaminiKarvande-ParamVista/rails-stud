@@ -18,8 +18,8 @@ module StudentManagement
     config.autoload_lib(ignore: %w[assets tasks])
 
 
-# Use :async for dev/test, or add sidekiq/good_job gem for production
-config.active_job.queue_adapter = :async
+    # Use :async for dev/test, or add sidekiq/good_job gem for production
+    config.active_job.queue_adapter = :async
 
     # Configuration for the application, engines, and railties goes here.
     #
