@@ -3,7 +3,7 @@ name: Deploy to Staging
 on:
   push:
     branches:
-      - stud/management
+      - stud/git_actions
 
 jobs:
   deploy:
@@ -39,6 +39,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
+          ssh-keygen -R 66.116.234.181 || true
           ssh-keyscan -H 66.116.234.181 >> ~/.ssh/known_hosts
 
       # Create Kamal secrets file
