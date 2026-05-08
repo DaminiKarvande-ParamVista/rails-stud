@@ -1,11 +1,19 @@
-name: Deploy to Staging
+name: Deploy After Merge to Management
+
 on:
-  push:
+  pull_request:
     branches:
-      - stud/git_actions
+      - stud/management
+    types:
+      - closed
+
 jobs:
   deploy:
+    # Run only if PR was actually merged
+    if: github.event.pull_request.merged == true
+
     runs-on: ubuntu-latest
+
     steps:
       # Checkout repository
       - name: Checkout code
@@ -28,35 +36,36 @@ jobs:
       - name: Install dependencies
         run: |
           bundle install
-          npm install
+          npm ci
 
-      # Setup SSH key
+      # Setup SSH
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
+
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+
           chmod 600 ~/.ssh/id_ed25519
 
-          # Remove any stale entries
           ssh-keygen -R 66.116.234.181 || true
 
-          # Add fresh entries — both hashed and unhashed for Ruby Net::SSH compatibility
           ssh-keyscan 66.116.234.181 >> ~/.ssh/known_hosts
           ssh-keyscan -H 66.116.234.181 >> ~/.ssh/known_hosts
 
-          # SSH config to prevent host key mismatch errors in CI
           cat >> ~/.ssh/config <<'EOF'
           Host 66.116.234.181
             StrictHostKeyChecking no
             UserKnownHostsFile /dev/null
             IdentityFile ~/.ssh/id_ed25519
           EOF
+
           chmod 600 ~/.ssh/config
 
       # Create Kamal secrets file
       - name: Create Kamal secrets
         run: |
           mkdir -p .kamal
+
           cat > .kamal/secrets.staging <<EOF
           RAILS_MASTER_KEY=${{ secrets.RAILS_MASTER_KEY }}
           SECRET_KEY_BASE=${{ secrets.SECRET_KEY_BASE }}
@@ -65,6 +74,6 @@ jobs:
           DB_PASSWORD=${{ secrets.DB_PASSWORD }}
           EOF
 
-      # Deploy
+      # Deploy with Kamal
       - name: Deploy with Kamal
         run: bundle exec kamal deploy -d staging
