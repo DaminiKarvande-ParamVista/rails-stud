@@ -69,7 +69,7 @@ gem "vite_rails", "~> 3.10"
 
 gem 'kaminari'
 
-gem 'pagy', '~> 8.4'
+gem 'pagy', '~> 43.4'
 
 gem 'ransack'
 gem "devise", "~> 5.0"
